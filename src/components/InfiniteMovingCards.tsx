@@ -1,6 +1,7 @@
 "use client";
 import { cn } from "../lib/utils";
 import React, { useEffect, useRef, useState } from "react";
+import type { ReactNode } from "react";
 
 export const InfiniteMovingCards = ({
   items,
@@ -9,7 +10,7 @@ export const InfiniteMovingCards = ({
   pauseOnHover = true,
   className,
 }: {
-  items: { icon: string; title: string; text: string }[];
+  items: { icon: ReactNode; title: string; text: string }[];
   direction?: "left" | "right";
   speed?: "fast" | "normal" | "slow";
   pauseOnHover?: boolean;
@@ -59,19 +60,24 @@ export const InfiniteMovingCards = ({
         {items.map((item, idx) => (
           <li
             key={idx}
-            className="relative w-[320px] max-w-full flex-shrink-0 rounded-2xl px-6 py-5 border"
+            className="relative w-[300px] max-w-full flex-shrink-0 rounded-xl px-5 py-4 border"
             style={{
               background: "linear-gradient(135deg, #111111, #0d0d0d)",
-              borderColor: "rgba(127,209,59,0.2)",
+              borderColor: "rgba(127,209,59,0.18)",
             }}
           >
-            <div className="flex items-start gap-4">
-              <span className="text-3xl flex-shrink-0">{item.icon}</span>
+            <div className="flex items-center gap-4">
+              <div
+                className="flex-shrink-0 w-10 h-10 rounded-lg flex items-center justify-center"
+                style={{ background: "rgba(127,209,59,0.1)", color: "var(--primary)" }}
+              >
+                {item.icon}
+              </div>
               <div>
-                <p className="text-sm font-bold uppercase tracking-widest mb-1" style={{ color: "var(--primary)" }}>
+                <p className="text-xs font-bold uppercase tracking-widest mb-0.5" style={{ color: "var(--primary)" }}>
                   {item.title}
                 </p>
-                <p className="text-sm leading-relaxed" style={{ color: "var(--text2)" }}>
+                <p className="text-xs leading-relaxed" style={{ color: "var(--text2)" }}>
                   {item.text}
                 </p>
               </div>

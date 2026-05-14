@@ -1,38 +1,39 @@
 "use client";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import { Volume2, Flag, Tv, UtensilsCrossed, Mountain, Wine, Mic } from "lucide-react";
 import { InfiniteMovingCards } from "./InfiniteMovingCards";
 
 const tickerItems = [
-  { icon: "🗣️", title: "Dialektproblem", text: "\"Servus\" im Supermarkt war erst der Anfang." },
-  { icon: "🗳️", title: "Politische Lage", text: "\"Wir san do halt so\" - nicht mehr ertraglich." },
-  { icon: "📺", title: "Soeder-Overload", text: "Im TV, im Radio, auf Plakaten. Wir verstehen." },
-  { icon: "🥨", title: "Essen-Trauma", text: "Leberkäs, Brezn, Bier. Du kannst nicht mehr." },
-  { icon: "🏔️", title: "Alpenblockade", text: "Berge blockieren den Blick auf die Freiheit." },
-  { icon: "🍺", title: "Oktoberfeststress", text: "16 Tage Dirndl-Pflicht sind genug." },
+  { icon: <Volume2 size={18} />, title: "Dialektproblem", text: '"Servus" im Supermarkt war erst der Anfang.' },
+  { icon: <Flag size={18} />, title: "Politische Lage", text: '"Wir san do halt so" - nicht mehr ertraglich.' },
+  { icon: <Tv size={18} />, title: "Soeder-Overload", text: "Im TV, im Radio, auf Plakaten. Wir verstehen." },
+  { icon: <UtensilsCrossed size={18} />, title: "Essen-Trauma", text: "Leberkäs, Brezn, Bier. Du kannst nicht mehr." },
+  { icon: <Mountain size={18} />, title: "Alpenblockade", text: "Berge blockieren den Blick auf die Freiheit." },
+  { icon: <Wine size={18} />, title: "Oktoberfeststress", text: "16 Tage Dirndl-Pflicht sind genug." },
 ];
 
 const problems = [
   {
-    icon: "🗣️",
+    icon: <Mic size={22} />,
     title: "Der Dialekt ist zu stark?",
-    text: "\"Servus\" im Supermarkt war erst der Anfang. Plötzlich verstehst du nichts mehr - und alle schauen dich komisch an.",
+    text: '"Servus" im Supermarkt war erst der Anfang. Plötzlich verstehst du nichts mehr - und alle schauen dich komisch an.',
     tag: "DIALEKTSCHADEN",
   },
   {
-    icon: "🗳️",
+    icon: <Flag size={22} />,
     title: "Die politische Einstellung treibt dich in den Wahnsinn?",
-    text: "\"Wir san do halt so\" ist keine Entschuldigung. Wir prüfen deine politische Belastung und extrahieren dich sofort.",
+    text: '"Wir san do halt so" ist keine Entschuldigung. Wir prüfen deine politische Belastung und extrahieren dich sofort.',
     tag: "POLITIKATRAUMA",
   },
   {
-    icon: "📺",
+    icon: <Tv size={22} />,
     title: "Markus Söder zu viel?",
     text: "Egal ob im TV, im Radio oder auf Plakaten - er ist überall. Wir kennen sichere Routen, die plakatfrei sind.",
     tag: "SOEDER-SYNDROM",
   },
   {
-    icon: "🥨",
+    icon: <UtensilsCrossed size={22} />,
     title: "Leberkäs, Brezn, Bier - du kannst nicht mehr?",
     text: "Wir auch nicht. Unsere Extraktionsfahrzeuge sind ausnahmelos bayerisches-Essen-frei. Versprochen.",
     tag: "KULINARISCHES LEIDEN",
@@ -48,11 +49,11 @@ export const PainSection = () => {
       {/* Ticker */}
       <div className="mb-20">
         <InfiniteMovingCards items={tickerItems} speed="normal" direction="left" />
-        <InfiniteMovingCards items={[...tickerItems].reverse()} speed="slow" direction="right" className="mt-4" />
+        <InfiniteMovingCards items={[...tickerItems].reverse()} speed="slow" direction="right" className="mt-3" />
       </div>
 
       {/* Section title */}
-      <div className="max-w-6xl mx-auto px-4">
+      <div className="max-w-6xl mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -86,28 +87,25 @@ export const PainSection = () => {
               <div
                 className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
                 style={{
-                  background: "radial-gradient(circle at 50% 0%, rgba(127,209,59,0.08), transparent 60%)",
+                  background: "radial-gradient(circle at 50% 0%, rgba(127,209,59,0.07), transparent 60%)",
                 }}
               />
 
-              <div className="relative z-10 flex items-start gap-4">
+              <div className="relative z-10 flex items-start gap-5">
                 <div
-                  className="flex-shrink-0 w-12 h-12 rounded-xl flex items-center justify-center text-2xl"
-                  style={{ background: "rgba(127,209,59,0.1)" }}
+                  className="flex-shrink-0 w-12 h-12 rounded-xl flex items-center justify-center"
+                  style={{ background: "rgba(127,209,59,0.1)", color: "var(--primary)", border: "1px solid rgba(127,209,59,0.15)" }}
                 >
                   {problem.icon}
                 </div>
-                <div>
+                <div className="min-w-0">
                   <span
                     className="inline-block text-[10px] font-black tracking-widest uppercase px-2 py-0.5 rounded mb-2"
-                    style={{
-                      background: "rgba(127,209,59,0.15)",
-                      color: "var(--primary)",
-                    }}
+                    style={{ background: "rgba(127,209,59,0.12)", color: "var(--primary)" }}
                   >
                     {problem.tag}
                   </span>
-                  <h3 className="font-black text-lg leading-tight text-white mb-2">
+                  <h3 className="font-black text-base leading-snug text-white mb-2">
                     {problem.title}
                   </h3>
                   <p className="text-sm leading-relaxed" style={{ color: "var(--text2)" }}>
@@ -118,10 +116,8 @@ export const PainSection = () => {
 
               {/* Corner accent */}
               <div
-                className="absolute bottom-0 right-0 w-16 h-16 rounded-br-2xl opacity-30"
-                style={{
-                  background: "linear-gradient(135deg, transparent 50%, rgba(127,209,59,0.15))",
-                }}
+                className="absolute bottom-0 right-0 w-16 h-16 rounded-br-2xl opacity-20 pointer-events-none"
+                style={{ background: "linear-gradient(135deg, transparent 50%, rgba(127,209,59,0.3))" }}
               />
             </motion.div>
           ))}

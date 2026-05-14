@@ -1,5 +1,4 @@
 "use client";
-import { useEffect, useRef } from "react";
 
 export const GlitchText = ({
   text,
@@ -8,71 +7,54 @@ export const GlitchText = ({
   text: string;
   className?: string;
 }) => {
-  const containerRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const container = containerRef.current;
-    if (!container) return;
-
-    let glitching = false;
-
-    const triggerGlitch = () => {
-      if (glitching) return;
-      glitching = true;
-
-      const before = container.querySelector(".glitch-before") as HTMLElement;
-      const after = container.querySelector(".glitch-after") as HTMLElement;
-
-      if (before && after) {
-        before.style.animation = "none";
-        after.style.animation = "none";
-        void before.offsetWidth;
-        before.style.animation = "glitch-1 0.3s steps(1) 1";
-        after.style.animation = "glitch-2 0.3s steps(1) 1";
-
-        setTimeout(() => {
-          before.style.animation = "";
-          after.style.animation = "";
-          glitching = false;
-        }, 300);
-      }
-    };
-
-    const interval = setInterval(triggerGlitch, 3000 + Math.random() * 4000);
-    return () => clearInterval(interval);
-  }, []);
-
   return (
-    <div
-      ref={containerRef}
-      className={`relative inline-block ${className}`}
-      style={{ userSelect: "none" }}
-    >
-      <span className="relative z-10">{text}</span>
-      <span
-        className="glitch-before absolute inset-0"
-        style={{
-          color: "#7fd13b",
-          left: "3px",
-          textShadow: "-2px 0 #ff003c",
-          opacity: 0.8,
-        }}
-        aria-hidden="true"
-      >
-        {text}
-      </span>
-      <span
-        className="glitch-after absolute inset-0"
-        style={{
-          color: "#7fd13b",
-          left: "-3px",
-          textShadow: "2px 0 #00d4ff",
-          opacity: 0.8,
-        }}
-        aria-hidden="true"
-      >
-        {text}
-      </span>
-    </div>
+    <>
+      <style>{`
+        .glitch-wrap {
+          position: relative;
+          display: block;
+          user-select: none;
+        }
+        .glitch-wrap .glitch-layer {
+          position: absolute;
+          inset: 0;
+          clip-path: inset(0 0 100% 0);
+        }
+        .glitch-wrap .glitch-a {
+          color: #7fd13b;
+          left: 3px;
+          text-shadow: -2px 0 #ff003c;
+          animation: auto-glitch-a 6s steps(1) infinite;
+        }
+        .glitch-wrap .glitch-b {
+          color: #7fd13b;
+          left: -3px;
+          text-shadow: 2px 0 #00d4ff;
+          animation: auto-glitch-b 6s steps(1) infinite;
+          animation-delay: 0.05s;
+        }
+        @keyframes auto-glitch-a {
+          0%, 88%, 100% { clip-path: inset(0 0 100% 0); transform: translate(0); }
+          89%  { clip-path: inset(5% 0 80% 0);  transform: translate(-3px, 0); }
+          90%  { clip-path: inset(45% 0 40% 0); transform: translate(3px, 0); }
+          91%  { clip-path: inset(70% 0 15% 0); transform: translate(-3px, 0); }
+          92%  { clip-path: inset(20% 0 70% 0); transform: translate(3px, 0); }
+          93%  { clip-path: inset(0 0 100% 0);  transform: translate(0); }
+        }
+        @keyframes auto-glitch-b {
+          0%, 88%, 100% { clip-path: inset(0 0 100% 0); transform: translate(0); }
+          89%  { clip-path: inset(60% 0 25% 0); transform: translate(3px, 0); }
+          90%  { clip-path: inset(15% 0 65% 0); transform: translate(-3px, 0); }
+          91%  { clip-path: inset(80% 0 5% 0);  transform: translate(3px, 0); }
+          92%  { clip-path: inset(35% 0 50% 0); transform: translate(-3px, 0); }
+          93%  { clip-path: inset(0 0 100% 0);  transform: translate(0); }
+        }
+      `}</style>
+      <div className={`glitch-wrap ${className}`} aria-label={text}>
+        <span className="relative z-10">{text}</span>
+        <span className="glitch-layer glitch-a" aria-hidden="true">{text}</span>
+        <span className="glitch-layer glitch-b" aria-hidden="true">{text}</span>
+      </div>
+    </>
   );
 };
