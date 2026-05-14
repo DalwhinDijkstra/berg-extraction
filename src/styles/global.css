@@ -1,0 +1,96 @@
+@import "tailwindcss";
+
+:root {
+  --primary: #7fd13b;
+  --primary-hover: #6ab82e;
+  --primary-glow: rgba(127, 209, 59, 0.15);
+  --primary-glow-strong: rgba(127, 209, 59, 0.3);
+  --bg: #080808;
+  --surface: #111111;
+  --surface2: #1a1a1a;
+  --border: rgba(255, 255, 255, 0.08);
+  --border2: rgba(255, 255, 255, 0.04);
+  --text: #ffffff;
+  --text2: #aaaaaa;
+  --muted: #555555;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: "Barlow Condensed", "Impact", sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+@keyframes spotlight {
+  0% { opacity: 0; transform: translate(-72%, -62%) scale(0.5); }
+  100% { opacity: 1; transform: translate(-50%, -40%) scale(1); }
+}
+.animate-spotlight { animation: spotlight 2s ease 0.75s 1 forwards; }
+
+@keyframes aurora {
+  from { background-position: 50% 50%, 50% 50%; }
+  to { background-position: 350% 50%, 350% 50%; }
+}
+.animate-aurora { animation: aurora 60s linear infinite; }
+
+@keyframes scroll {
+  to { transform: translate(calc(-50% - 0.5rem)); }
+}
+.animate-scroll {
+  animation: scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite;
+}
+
+@keyframes glitch-1 {
+  0%, 100% { clip-path: inset(0 0 95% 0); transform: translate(-3px, 0); }
+  20% { clip-path: inset(30% 0 50% 0); transform: translate(3px, 0); }
+  40% { clip-path: inset(60% 0 20% 0); transform: translate(-3px, 0); }
+  60% { clip-path: inset(80% 0 5% 0); transform: translate(3px, 0); }
+  80% { clip-path: inset(10% 0 75% 0); transform: translate(-3px, 0); }
+}
+
+@keyframes glitch-2 {
+  0%, 100% { clip-path: inset(90% 0 0% 0); transform: translate(3px, 0); }
+  20% { clip-path: inset(50% 0 30% 0); transform: translate(-3px, 0); }
+  40% { clip-path: inset(20% 0 60% 0); transform: translate(3px, 0); }
+  60% { clip-path: inset(5% 0 80% 0); transform: translate(-3px, 0); }
+  80% { clip-path: inset(75% 0 10% 0); transform: translate(3px, 0); }
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-up { animation: fade-up 0.8s ease forwards; }
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px var(--primary-glow), 0 0 40px var(--primary-glow); }
+  50% { box-shadow: 0 0 40px var(--primary-glow-strong), 0 0 80px var(--primary-glow); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes beam-flow {
+  0% { stroke-dashoffset: 1000; opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { stroke-dashoffset: 0; opacity: 0; }
+}
+
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 2px; }
