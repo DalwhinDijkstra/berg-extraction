@@ -2,7 +2,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Phone, Crosshair, Zap, Sun } from "lucide-react";
-import { TracingBeam } from "./TracingBeam";
+import { CrosshairSVG, HUDCorner, MilGrid } from "./CrosshairDecor";
 
 const steps = [
   {
@@ -47,28 +47,24 @@ export const ProcessSection = () => {
     <section
       id="prozess"
       ref={ref}
-      className="py-24 relative overflow-hidden"
+      className="relative py-24 overflow-hidden"
       style={{
         background: "linear-gradient(180deg, #060608 0%, #0a0e08 50%, #060608 100%)",
       }}
     >
-      {/* Subtle grid */}
-      <div
-        className="absolute inset-0 opacity-[0.025] pointer-events-none"
-        style={{
-          backgroundImage:
-            "linear-gradient(rgba(127,209,59,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(127,209,59,0.5) 1px, transparent 1px)",
-          backgroundSize: "60px 60px",
-        }}
-      />
+      <MilGrid />
 
-      <div className="max-w-3xl mx-auto px-6">
+      {/* Crosshair decorations */}
+      <CrosshairSVG size={120} className="absolute top-16 right-[10%]" opacity={0.06} />
+      <CrosshairSVG size={60} className="absolute bottom-32 left-[8%]" opacity={0.05} />
+
+      <div className="relative z-10 max-w-2xl mx-auto px-6">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-20"
+          className="text-center mb-16"
         >
           <p className="text-xs tracking-widest uppercase mb-3" style={{ color: "var(--primary)" }}>
             UNSER PROZESS
@@ -79,37 +75,62 @@ export const ProcessSection = () => {
           <div className="mt-4 mx-auto h-px w-24" style={{ background: "var(--primary)" }} />
         </motion.div>
 
-        {/* TracingBeam wrapping steps */}
-        <TracingBeam>
-          <div className="flex flex-col gap-8">
+        {/* Timeline */}
+        <div className="relative">
+          {/* Vertical line */}
+          <div
+            className="absolute left-6 top-0 bottom-0 w-px"
+            style={{ background: "linear-gradient(to bottom, transparent, rgba(127,209,59,0.3), rgba(127,209,59,0.3), transparent)" }}
+          />
+
+          <div className="flex flex-col gap-6">
             {steps.map((step, idx) => (
               <motion.div
                 key={step.number}
                 initial={{ opacity: 0, y: 20 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.5, delay: idx * 0.12 }}
+                transition={{ duration: 0.5, delay: idx * 0.15 }}
+                className="relative pl-16"
               >
+                {/* Timeline dot */}
                 <div
-                  className="rounded-2xl border transition-colors duration-300 hover:border-[rgba(127,209,59,0.25)] overflow-hidden"
+                  className="absolute left-[14px] top-6 w-[13px] h-[13px] rounded-full z-10 flex items-center justify-center"
                   style={{
-                    background: "rgba(10,10,10,0.9)",
-                    borderColor: "rgba(127,209,59,0.1)",
-                    backdropFilter: "blur(8px)",
+                    background: "#080808",
+                    border: "2px solid #7fd13b",
+                    boxShadow: "0 0 12px rgba(127,209,59,0.4)",
                   }}
                 >
-                  {/* Card header row */}
+                  <div className="w-[5px] h-[5px] rounded-full" style={{ background: "#7fd13b" }} />
+                </div>
+
+                {/* Card */}
+                <div
+                  className="relative rounded-xl border overflow-hidden transition-colors duration-300 hover:border-[rgba(127,209,59,0.25)]"
+                  style={{
+                    background: "rgba(12,12,12,0.95)",
+                    borderColor: "rgba(127,209,59,0.1)",
+                  }}
+                >
+                  {/* HUD corners */}
+                  <HUDCorner position="top-left" />
+                  <HUDCorner position="top-right" />
+                  <HUDCorner position="bottom-left" />
+                  <HUDCorner position="bottom-right" />
+
+                  {/* Header */}
                   <div
-                    className="flex items-center gap-3 px-6 pt-5 pb-3"
+                    className="flex items-center gap-3 px-5 py-3"
                     style={{ borderBottom: "1px solid rgba(127,209,59,0.06)" }}
                   >
                     <span
-                      className="text-3xl font-black tabular-nums leading-none"
-                      style={{ color: "transparent", WebkitTextStroke: "1px rgba(127,209,59,0.3)" }}
+                      className="text-2xl font-black tabular-nums leading-none"
+                      style={{ color: "transparent", WebkitTextStroke: "1px rgba(127,209,59,0.35)" }}
                     >
                       {step.number}
                     </span>
                     <div
-                      className="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0"
+                      className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0"
                       style={{
                         background: "rgba(127,209,59,0.1)",
                         border: "1px solid rgba(127,209,59,0.2)",
@@ -118,27 +139,25 @@ export const ProcessSection = () => {
                     >
                       {step.icon}
                     </div>
-                    <h3 className="text-xl font-black text-white">{step.title}</h3>
+                    <h3 className="text-lg font-black text-white">{step.title}</h3>
                     <span
-                      className="ml-auto text-[10px] font-bold tracking-widest uppercase px-2 py-0.5 rounded flex-shrink-0"
-                      style={{ background: "rgba(127,209,59,0.1)", color: "var(--primary)" }}
+                      className="ml-auto text-[9px] font-bold tracking-widest uppercase px-2 py-0.5 rounded hidden sm:block"
+                      style={{ background: "rgba(127,209,59,0.08)", color: "var(--primary)" }}
                     >
                       {step.subtitle}
                     </span>
                   </div>
 
-                  {/* Card body */}
-                  <div className="px-6 py-4">
-                    <p className="font-bold text-white text-sm mb-1.5">{step.description}</p>
-                    <p className="text-sm leading-relaxed" style={{ color: "var(--text2)" }}>
-                      {step.detail}
-                    </p>
+                  {/* Body */}
+                  <div className="px-5 py-4">
+                    <p className="font-bold text-white text-sm mb-1">{step.description}</p>
+                    <p className="text-xs leading-relaxed" style={{ color: "var(--text2)" }}>{step.detail}</p>
                   </div>
                 </div>
               </motion.div>
             ))}
           </div>
-        </TracingBeam>
+        </div>
       </div>
     </section>
   );
