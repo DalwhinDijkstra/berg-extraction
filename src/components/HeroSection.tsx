@@ -110,7 +110,7 @@ export const HeroSection = () => {
           className="inline-flex items-center gap-2 mb-8"
         >
           <span
-            className="px-4 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase"
+            className="px-5 py-2 rounded-full text-sm font-bold tracking-widest uppercase"
             style={{
               border: "1px solid rgba(127,209,59,0.3)",
               background: "rgba(127,209,59,0.08)",
@@ -148,7 +148,7 @@ export const HeroSection = () => {
         <div className="mt-6 max-w-2xl mx-auto min-h-[3rem]">
           <TextGenerateEffect
             words="Spezialisiert auf die Extraktion von Personen, die unfreiwillig in Bayern festsitzen."
-            className="text-lg"
+            className="text-xl"
             duration={0.4}
           />
         </div>
@@ -175,7 +175,7 @@ export const HeroSection = () => {
           </a>
           <a
             href="#prozess"
-            className="px-8 py-4 rounded-full font-bold text-sm tracking-widest uppercase transition-all duration-300 hover:scale-105"
+            className="px-8 py-4 rounded-full font-bold text-base tracking-widest uppercase transition-all duration-300 hover:scale-105"
             style={{
               border: "1px solid rgba(127,209,59,0.3)",
               color: "var(--primary)",
@@ -201,14 +201,14 @@ export const HeroSection = () => {
           ].map((stat) => (
             <div key={stat.label} className="text-center">
               <div
-                className="text-3xl font-black"
+                className="text-4xl font-black"
                 style={{ color: "var(--primary)" }}
               >
                 {stat.value}
               </div>
               <div
-                className="text-xs tracking-widest uppercase mt-1"
-                style={{ color: "var(--muted)" }}
+                className="text-sm tracking-widest uppercase mt-2"
+                style={{ color: "#bbb" }}
               >
                 {stat.label}
               </div>
@@ -223,9 +223,9 @@ export const HeroSection = () => {
         animate={{ opacity: 1 }}
         transition={{ delay: 2 }}
         className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
-        style={{ color: "var(--muted)" }}
+        style={{ color: "#bbb" }}
       >
-        <span className="text-xs tracking-widest uppercase">Scroll</span>
+        <span className="text-sm tracking-widest uppercase">Scroll</span>
         <motion.div
           animate={{ y: [0, 8, 0] }}
           transition={{ duration: 1.5, repeat: Infinity }}

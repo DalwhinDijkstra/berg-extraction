@@ -60,7 +60,7 @@ export const InfiniteMovingCards = ({
         {items.map((item, idx) => (
           <li
             key={idx}
-            className="relative w-[300px] max-w-full flex-shrink-0 rounded-xl px-5 py-4 border"
+            className="relative w-[320px] max-w-full flex-shrink-0 rounded-xl px-6 py-5 border"
             style={{
               background: "linear-gradient(135deg, #111111, #0d0d0d)",
               borderColor: "rgba(127,209,59,0.18)",
@@ -74,10 +74,10 @@ export const InfiniteMovingCards = ({
                 {item.icon}
               </div>
               <div>
-                <p className="text-xs font-bold uppercase tracking-widest mb-0.5" style={{ color: "var(--primary)" }}>
+                <p className="text-sm font-bold uppercase tracking-widest mb-1" style={{ color: "var(--primary)" }}>
                   {item.title}
                 </p>
-                <p className="text-xs leading-relaxed" style={{ color: "var(--text2)" }}>
+                <p className="text-sm leading-relaxed" style={{ color: "#ddd" }}>
                   {item.text}
                 </p>
               </div>

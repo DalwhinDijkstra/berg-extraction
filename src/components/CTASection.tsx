@@ -45,7 +45,7 @@ export const CTASection = () => {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
         >
-          <p className="text-xs tracking-widest uppercase mb-6" style={{ color: "var(--primary)" }}>
+          <p className="text-sm tracking-widest uppercase mb-8" style={{ color: "var(--primary)" }}>
             EIN ANRUF RETTET DICH
           </p>
 
@@ -80,8 +80,8 @@ export const CTASection = () => {
             initial={{ opacity: 0 }}
             animate={isInView ? { opacity: 1 } : {}}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="text-base tracking-widest uppercase mb-10"
-            style={{ color: "#999" }}
+            className="text-lg tracking-widest uppercase mb-12"
+            style={{ color: "#bbb" }}
           >
             ODER ONLINE: BERG-EXTRACTION.DE
           </motion.p>
@@ -120,7 +120,7 @@ export const CTASection = () => {
             initial={{ opacity: 0 }}
             animate={isInView ? { opacity: 1 } : {}}
             transition={{ duration: 0.6, delay: 0.7 }}
-            className="mt-16 flex flex-wrap gap-6 justify-center"
+            className="mt-20 flex flex-wrap gap-8 justify-center"
           >
             {[
               "100% Dialektfreie Zone",
@@ -130,8 +130,8 @@ export const CTASection = () => {
             ].map((item) => (
               <div
                 key={item}
-                className="flex items-center gap-2 text-sm tracking-wider"
-                style={{ color: "#999" }}
+                className="flex items-center gap-2 text-base tracking-wider"
+                style={{ color: "#bbb" }}
               >
                 <span style={{ color: "var(--primary)" }}>✓</span>
                 {item}

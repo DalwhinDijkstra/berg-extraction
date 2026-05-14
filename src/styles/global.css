@@ -11,8 +11,8 @@
   --border: rgba(255, 255, 255, 0.08);
   --border2: rgba(255, 255, 255, 0.04);
   --text: #ffffff;
-  --text2: #cccccc;
-  --muted: #888888;
+  --text2: #e0e0e0;
+  --muted: #aaaaaa;
 }
 
 * {

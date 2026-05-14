@@ -47,7 +47,7 @@ export const PainSection = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section ref={ref} className="relative py-32 overflow-hidden" style={{ background: "#060608" }}>
+    <section ref={ref} className="relative py-40 overflow-hidden" style={{ background: "#060608" }}>
       {/* Crosshairs */}
       <CrosshairSVG size={100} className="absolute top-24 right-[6%]" opacity={0.04} />
 
@@ -63,19 +63,19 @@ export const PainSection = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-20"
         >
-          <p className="text-xs tracking-widest uppercase mb-3" style={{ color: "var(--primary)" }}>
+          <p className="text-sm tracking-widest uppercase mb-4" style={{ color: "var(--primary)" }}>
             ERKENNE DICH WIEDER?
           </p>
           <h2 className="text-[clamp(2rem,6vw,4rem)] font-black leading-none tracking-tight text-white">
             WIR KENNEN DEIN LEIDEN.
           </h2>
-          <div className="mt-4 mx-auto h-px w-24" style={{ background: "var(--primary)" }} />
+          <div className="mt-6 mx-auto h-px w-24" style={{ background: "var(--primary)" }} />
         </motion.div>
 
         {/* Problem cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {problems.map((problem, idx) => (
             <motion.div
               key={problem.title}
@@ -101,7 +101,7 @@ export const PainSection = () => {
                 }}
               />
 
-              <div className="relative z-10 p-7 flex items-start gap-5">
+              <div className="relative z-10 p-8 flex items-start gap-5">
                 <div
                   className="flex-shrink-0 w-12 h-12 rounded-xl flex items-center justify-center"
                   style={{ background: "rgba(127,209,59,0.1)", color: "var(--primary)", border: "1px solid rgba(127,209,59,0.15)" }}
@@ -110,15 +110,15 @@ export const PainSection = () => {
                 </div>
                 <div className="min-w-0">
                   <span
-                    className="inline-block text-[10px] font-black tracking-widest uppercase px-2 py-0.5 rounded mb-2"
+                    className="inline-block text-xs font-black tracking-widest uppercase px-2.5 py-1 rounded mb-3"
                     style={{ background: "rgba(127,209,59,0.12)", color: "var(--primary)" }}
                   >
                     {problem.tag}
                   </span>
-                  <h3 className="font-black text-base leading-snug text-white mb-2">
+                  <h3 className="font-black text-lg leading-snug text-white mb-3">
                     {problem.title}
                   </h3>
-                  <p className="text-sm leading-relaxed" style={{ color: "#ccc" }}>
+                  <p className="text-base leading-relaxed" style={{ color: "#ddd" }}>
                     {problem.text}
                   </p>
                 </div>

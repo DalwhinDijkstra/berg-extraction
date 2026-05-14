@@ -62,7 +62,7 @@ export const ArsenalSection = () => {
     <section
       id="arsenal"
       ref={ref}
-      className="relative py-32 overflow-hidden"
+      className="relative py-40 overflow-hidden"
       style={{ background: "#050505" }}
     >
       <MilGrid />
@@ -83,22 +83,22 @@ export const ArsenalSection = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-20"
         >
-          <p className="text-xs tracking-widest uppercase mb-3" style={{ color: "var(--primary)" }}>
+          <p className="text-sm tracking-widest uppercase mb-4" style={{ color: "var(--primary)" }}>
             UNSER ARSENAL
           </p>
           <h2 className="text-[clamp(2rem,6vw,4rem)] font-black leading-none tracking-tight text-white">
             AUSRÜSTUNG & FAHRZEUGE.
           </h2>
-          <p className="mt-4 text-base max-w-lg mx-auto" style={{ color: "#bbb" }}>
+          <p className="mt-5 text-lg max-w-lg mx-auto" style={{ color: "#ccc" }}>
             Jedes Einsatzmittel wurde speziell für bayerische Bedingungen optimiert und getestet.
           </p>
-          <div className="mt-4 mx-auto h-px w-24" style={{ background: "var(--primary)" }} />
+          <div className="mt-6 mx-auto h-px w-24" style={{ background: "var(--primary)" }} />
         </motion.div>
 
         {/* Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {arsenal.map((item, idx) => (
             <motion.div
               key={item.codename}
@@ -141,7 +141,7 @@ export const ArsenalSection = () => {
                 />
                 {/* Codename badge */}
                 <div
-                  className="absolute top-3 left-3 px-2 py-1 rounded text-[10px] font-black tracking-widest"
+                  className="absolute top-3 left-3 px-3 py-1.5 rounded text-xs font-black tracking-widest"
                   style={{
                     background: "rgba(0,0,0,0.7)",
                     border: "1px solid rgba(127,209,59,0.3)",
@@ -153,7 +153,7 @@ export const ArsenalSection = () => {
                 </div>
                 {/* Status badge */}
                 <div
-                  className="absolute top-3 right-3 flex items-center gap-1.5 px-2 py-1 rounded text-[9px] font-bold tracking-widest"
+                  className="absolute top-3 right-3 flex items-center gap-1.5 px-3 py-1.5 rounded text-xs font-bold tracking-widest"
                   style={{
                     background: "rgba(0,0,0,0.7)",
                     color: "var(--primary)",
@@ -173,23 +173,23 @@ export const ArsenalSection = () => {
               </div>
 
               {/* Content */}
-              <div className="p-5">
-                <h3 className="font-black text-white text-base mb-1">{item.name}</h3>
-                <p className="text-sm leading-relaxed mb-3" style={{ color: "#ccc" }}>
+              <div className="p-8">
+                <h3 className="font-black text-white text-lg mb-2">{item.name}</h3>
+                <p className="text-base leading-relaxed mb-4" style={{ color: "#ddd" }}>
                   {item.desc}
                 </p>
                 {/* Specs */}
                 <div
-                  className="pt-3"
+                  className="pt-4"
                   style={{ borderTop: "1px solid rgba(127,209,59,0.08)" }}
                 >
                   {item.specs.map((spec) => (
                     <div
                       key={spec}
-                      className="flex items-center gap-2 text-xs py-0.5"
-                      style={{ color: "#999" }}
+                      className="flex items-center gap-2 text-sm py-1"
+                      style={{ color: "#bbb" }}
                     >
-                      <span style={{ color: "var(--primary)", fontSize: "8px" }}>&#9654;</span>
+                      <span style={{ color: "var(--primary)", fontSize: "10px" }}>&#9654;</span>
                       {spec}
                     </div>
                   ))}

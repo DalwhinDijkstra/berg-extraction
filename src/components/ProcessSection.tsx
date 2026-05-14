@@ -47,7 +47,7 @@ export const ProcessSection = () => {
     <section
       id="prozess"
       ref={ref}
-      className="relative py-32 overflow-hidden"
+      className="relative py-40 overflow-hidden"
       style={{
         background: "linear-gradient(180deg, #060608 0%, #0a0e08 50%, #060608 100%)",
       }}
@@ -62,19 +62,19 @@ export const ProcessSection = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-20"
         >
-          <p className="text-xs tracking-widest uppercase mb-3" style={{ color: "var(--primary)" }}>
+          <p className="text-sm tracking-widest uppercase mb-4" style={{ color: "var(--primary)" }}>
             UNSER PROZESS
           </p>
           <h2 className="text-[clamp(2rem,6vw,4rem)] font-black leading-none tracking-tight text-white">
             4 SCHRITTE ZUR FREIHEIT.
           </h2>
-          <div className="mt-4 mx-auto h-px w-24" style={{ background: "var(--primary)" }} />
+          <div className="mt-6 mx-auto h-px w-24" style={{ background: "var(--primary)" }} />
         </motion.div>
 
         {/* Cards - no timeline, just stacked centered cards */}
-        <div className="flex flex-col gap-6">
+        <div className="flex flex-col gap-8">
           {steps.map((step, idx) => (
             <motion.div
               key={step.number}
@@ -96,7 +96,7 @@ export const ProcessSection = () => {
 
                 {/* Header */}
                 <div
-                  className="flex items-center gap-3 px-6 py-4"
+                  className="flex items-center gap-3 px-8 py-6"
                   style={{ borderBottom: "1px solid rgba(127,209,59,0.06)" }}
                 >
                   <span
@@ -117,7 +117,7 @@ export const ProcessSection = () => {
                   </div>
                   <h3 className="text-lg font-black text-white">{step.title}</h3>
                   <span
-                    className="ml-auto text-[9px] font-bold tracking-widest uppercase px-2 py-0.5 rounded hidden sm:block"
+                    className="ml-auto text-xs font-bold tracking-widest uppercase px-3 py-1 rounded hidden sm:block"
                     style={{ background: "rgba(127,209,59,0.08)", color: "var(--primary)" }}
                   >
                     {step.subtitle}
@@ -125,9 +125,9 @@ export const ProcessSection = () => {
                 </div>
 
                 {/* Body */}
-                <div className="px-6 py-5">
-                  <p className="font-bold text-white text-base mb-2">{step.description}</p>
-                  <p className="text-sm leading-relaxed" style={{ color: "#ccc" }}>{step.detail}</p>
+                <div className="px-8 py-6">
+                  <p className="font-bold text-white text-lg mb-3">{step.description}</p>
+                  <p className="text-base leading-relaxed" style={{ color: "#ddd" }}>{step.detail}</p>
                 </div>
               </div>
             </motion.div>
