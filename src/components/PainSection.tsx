@@ -62,7 +62,7 @@ export const PainSection = () => {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 1.2 }}
           className="text-center mb-20"
         >
           <p className="text-sm tracking-widest uppercase mb-4" style={{ color: "var(--primary)" }}>
@@ -81,7 +81,7 @@ export const PainSection = () => {
               key={problem.title}
               initial={{ opacity: 0, y: 40 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: idx * 0.1 }}
+              transition={{ duration: 1, delay: idx * 0.2 }}
               className="group relative rounded-xl border overflow-hidden transition-all duration-300 hover:border-[rgba(127,209,59,0.25)]"
               style={{
                 background: "linear-gradient(135deg, #111111, #0d0d0d)",

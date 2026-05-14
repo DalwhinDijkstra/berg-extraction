@@ -61,7 +61,7 @@ export const ProcessSection = () => {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 1.2 }}
           className="text-center mb-20"
         >
           <p className="text-sm tracking-widest uppercase mb-4" style={{ color: "var(--primary)" }}>
@@ -80,7 +80,7 @@ export const ProcessSection = () => {
               key={step.number}
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: idx * 0.12 }}
+              transition={{ duration: 1, delay: idx * 0.25 }}
             >
               <div
                 className="relative rounded-xl border overflow-hidden transition-colors duration-300 hover:border-[rgba(127,209,59,0.25)]"

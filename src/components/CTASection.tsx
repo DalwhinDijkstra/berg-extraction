@@ -43,7 +43,7 @@ export const CTASection = () => {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 1.2 }}
         >
           <p className="text-sm tracking-widest uppercase mb-8" style={{ color: "var(--primary)" }}>
             EIN ANRUF RETTET DICH
@@ -66,7 +66,7 @@ export const CTASection = () => {
             href="tel:0800-RAUSHIER"
             initial={{ opacity: 0, scale: 0.9 }}
             animate={isInView ? { opacity: 1, scale: 1 } : {}}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            transition={{ duration: 1, delay: 0.5 }}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.98 }}
             className="block text-[clamp(2rem,6vw,4rem)] font-black tracking-widest text-white hover:text-[var(--primary)] transition-colors duration-300 mb-8"
@@ -79,7 +79,7 @@ export const CTASection = () => {
           <motion.p
             initial={{ opacity: 0 }}
             animate={isInView ? { opacity: 1 } : {}}
-            transition={{ duration: 0.6, delay: 0.4 }}
+            transition={{ duration: 1, delay: 0.8 }}
             className="text-lg tracking-widest uppercase mb-12"
             style={{ color: "#bbb" }}
           >
@@ -90,7 +90,7 @@ export const CTASection = () => {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.5 }}
+            transition={{ duration: 1, delay: 1.2 }}
             className="flex flex-col sm:flex-row gap-4 justify-center"
           >
             <a
@@ -119,7 +119,7 @@ export const CTASection = () => {
           <motion.div
             initial={{ opacity: 0 }}
             animate={isInView ? { opacity: 1 } : {}}
-            transition={{ duration: 0.6, delay: 0.7 }}
+            transition={{ duration: 1, delay: 1.5 }}
             className="mt-20 flex flex-wrap gap-8 justify-center"
           >
             {[

@@ -91,7 +91,7 @@ export const HeroSection = () => {
         <motion.div
           initial={{ opacity: 0, scale: 0.5, rotate: -10 }}
           animate={{ opacity: 1, scale: 1, rotate: 0 }}
-          transition={{ duration: 1, ease: "easeOut" }}
+          transition={{ duration: 2, ease: "easeOut" }}
           className="mb-8"
         >
           <img
@@ -106,7 +106,7 @@ export const HeroSection = () => {
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
+          transition={{ duration: 1.2, delay: 0.8 }}
           className="inline-flex items-center gap-2 mb-8"
         >
           <span
@@ -125,7 +125,7 @@ export const HeroSection = () => {
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
+          transition={{ duration: 1.5, delay: 1.2 }}
         >
           <GlitchText
             text="WIR HOLEN DICH RAUS."
@@ -137,7 +137,7 @@ export const HeroSection = () => {
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.5 }}
+          transition={{ duration: 1.2, delay: 2 }}
           className="mt-4 text-[clamp(1rem,3vw,1.6rem)] font-bold tracking-widest"
           style={{ color: "var(--primary)" }}
         >
@@ -149,7 +149,7 @@ export const HeroSection = () => {
           <TextGenerateEffect
             words="Spezialisiert auf die Extraktion von Personen, die unfreiwillig in Bayern festsitzen."
             className="text-xl"
-            duration={0.4}
+            duration={0.8}
           />
         </div>
 
@@ -157,7 +157,7 @@ export const HeroSection = () => {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 1.4 }}
+          transition={{ duration: 1.2, delay: 3.2 }}
           style={{ marginTop: "2.5rem" }}
           className="flex flex-col sm:flex-row gap-4 justify-center items-center"
         >
@@ -190,8 +190,8 @@ export const HeroSection = () => {
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 1.6 }}
-          style={{ marginTop: "4rem" }}
+          transition={{ duration: 1.5, delay: 4 }}
+          style={{ marginTop: "3rem", marginBottom: "5rem" }}
           className="grid grid-cols-3 gap-8 max-w-xl mx-auto"
         >
           {[
@@ -220,10 +220,10 @@ export const HeroSection = () => {
       {/* Scroll indicator */}
       <motion.div
         initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 2 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
-        style={{ color: "#bbb" }}
+        animate={{ opacity: 0.6 }}
+        transition={{ delay: 5, duration: 1.5 }}
+        className="absolute bottom-4 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1"
+        style={{ color: "#888" }}
       >
         <span className="text-sm tracking-widest uppercase">Scroll</span>
         <motion.div
