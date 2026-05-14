@@ -47,7 +47,7 @@ export const ProcessSection = () => {
     <section
       id="prozess"
       ref={ref}
-      className="relative py-24 overflow-hidden"
+      className="relative py-32 overflow-hidden"
       style={{
         background: "linear-gradient(180deg, #060608 0%, #0a0e08 50%, #060608 100%)",
       }}
@@ -74,7 +74,7 @@ export const ProcessSection = () => {
         </motion.div>
 
         {/* Cards - no timeline, just stacked centered cards */}
-        <div className="flex flex-col gap-5">
+        <div className="flex flex-col gap-6">
           {steps.map((step, idx) => (
             <motion.div
               key={step.number}
@@ -126,8 +126,8 @@ export const ProcessSection = () => {
 
                 {/* Body */}
                 <div className="px-6 py-5">
-                  <p className="font-bold text-white text-sm mb-1">{step.description}</p>
-                  <p className="text-xs leading-relaxed" style={{ color: "var(--text2)" }}>{step.detail}</p>
+                  <p className="font-bold text-white text-base mb-2">{step.description}</p>
+                  <p className="text-sm leading-relaxed" style={{ color: "#ccc" }}>{step.detail}</p>
                 </div>
               </div>
             </motion.div>

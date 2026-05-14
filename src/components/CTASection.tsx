@@ -9,7 +9,7 @@ export const CTASection = () => {
   return (
     <section
       ref={ref}
-      className="relative py-32 overflow-hidden"
+      className="relative py-40 overflow-hidden"
       style={{ background: "#060608" }}
     >
       {/* Aurora background */}
@@ -80,8 +80,8 @@ export const CTASection = () => {
             initial={{ opacity: 0 }}
             animate={isInView ? { opacity: 1 } : {}}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="text-sm tracking-widest uppercase mb-10"
-            style={{ color: "var(--muted)" }}
+            className="text-base tracking-widest uppercase mb-10"
+            style={{ color: "#999" }}
           >
             ODER ONLINE: BERG-EXTRACTION.DE
           </motion.p>
@@ -105,10 +105,10 @@ export const CTASection = () => {
             </a>
             <a
               href="#prozess"
-              className="px-10 py-5 rounded-full font-bold text-sm tracking-widest uppercase transition-all duration-300 hover:scale-105"
+              className="px-10 py-5 rounded-full font-bold text-base tracking-widest uppercase transition-all duration-300 hover:scale-105"
               style={{
                 border: "1px solid rgba(127,209,59,0.25)",
-                color: "var(--text2)",
+                color: "#ddd",
               }}
             >
               PROZESS ANSEHEN
@@ -130,8 +130,8 @@ export const CTASection = () => {
             ].map((item) => (
               <div
                 key={item}
-                className="flex items-center gap-2 text-xs tracking-wider"
-                style={{ color: "var(--muted)" }}
+                className="flex items-center gap-2 text-sm tracking-wider"
+                style={{ color: "#999" }}
               >
                 <span style={{ color: "var(--primary)" }}>✓</span>
                 {item}

@@ -62,7 +62,7 @@ export const ArsenalSection = () => {
     <section
       id="arsenal"
       ref={ref}
-      className="relative py-24 overflow-hidden"
+      className="relative py-32 overflow-hidden"
       style={{ background: "#050505" }}
     >
       <MilGrid />
@@ -91,14 +91,14 @@ export const ArsenalSection = () => {
           <h2 className="text-[clamp(2rem,6vw,4rem)] font-black leading-none tracking-tight text-white">
             AUSRÜSTUNG & FAHRZEUGE.
           </h2>
-          <p className="mt-4 text-sm max-w-lg mx-auto" style={{ color: "var(--text2)" }}>
+          <p className="mt-4 text-base max-w-lg mx-auto" style={{ color: "#bbb" }}>
             Jedes Einsatzmittel wurde speziell für bayerische Bedingungen optimiert und getestet.
           </p>
           <div className="mt-4 mx-auto h-px w-24" style={{ background: "var(--primary)" }} />
         </motion.div>
 
         {/* Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {arsenal.map((item, idx) => (
             <motion.div
               key={item.codename}
@@ -175,7 +175,7 @@ export const ArsenalSection = () => {
               {/* Content */}
               <div className="p-5">
                 <h3 className="font-black text-white text-base mb-1">{item.name}</h3>
-                <p className="text-xs leading-relaxed mb-3" style={{ color: "var(--text2)" }}>
+                <p className="text-sm leading-relaxed mb-3" style={{ color: "#ccc" }}>
                   {item.desc}
                 </p>
                 {/* Specs */}
@@ -186,8 +186,8 @@ export const ArsenalSection = () => {
                   {item.specs.map((spec) => (
                     <div
                       key={spec}
-                      className="flex items-center gap-2 text-[11px] py-0.5"
-                      style={{ color: "var(--muted)" }}
+                      className="flex items-center gap-2 text-xs py-0.5"
+                      style={{ color: "#999" }}
                     >
                       <span style={{ color: "var(--primary)", fontSize: "8px" }}>&#9654;</span>
                       {spec}

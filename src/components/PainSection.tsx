@@ -47,7 +47,7 @@ export const PainSection = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section ref={ref} className="relative py-24 overflow-hidden" style={{ background: "#060608" }}>
+    <section ref={ref} className="relative py-32 overflow-hidden" style={{ background: "#060608" }}>
       {/* Crosshairs */}
       <CrosshairSVG size={100} className="absolute top-24 right-[6%]" opacity={0.04} />
 
@@ -75,7 +75,7 @@ export const PainSection = () => {
         </motion.div>
 
         {/* Problem cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
           {problems.map((problem, idx) => (
             <motion.div
               key={problem.title}
@@ -118,7 +118,7 @@ export const PainSection = () => {
                   <h3 className="font-black text-base leading-snug text-white mb-2">
                     {problem.title}
                   </h3>
-                  <p className="text-sm leading-relaxed" style={{ color: "var(--text2)" }}>
+                  <p className="text-sm leading-relaxed" style={{ color: "#ccc" }}>
                     {problem.text}
                   </p>
                 </div>

@@ -95,10 +95,10 @@ export const HeroSection = () => {
           className="mb-8"
         >
           <img
-            src="/logo.svg"
+            src="/logo.png"
             alt="B.E.R.G. Badge"
-            className="w-36 h-36 md:w-48 md:h-48 mx-auto drop-shadow-2xl"
-            style={{ filter: "drop-shadow(0 0 30px rgba(200,185,138,0.3))" }}
+            className="w-40 h-40 md:w-56 md:h-56 mx-auto drop-shadow-2xl"
+            style={{ filter: "drop-shadow(0 0 40px rgba(200,185,138,0.4))" }}
           />
         </motion.div>
 
