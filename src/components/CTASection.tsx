@@ -39,7 +39,7 @@ export const CTASection = () => {
       />
 
       {/* Content */}
-      <div className="relative z-10 max-w-4xl mx-auto px-4 text-center">
+      <div className="relative z-10 max-w-4xl mx-auto px-6 text-center" style={{ maxWidth: "56rem", marginInline: "auto" }}>
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}

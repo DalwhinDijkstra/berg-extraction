@@ -56,7 +56,7 @@ export const ProcessSection = () => {
       <CrosshairSVG size={120} className="absolute top-16 right-[10%]" opacity={0.06} />
       <CrosshairSVG size={60} className="absolute bottom-32 left-[8%]" opacity={0.05} />
 
-      <div className="relative z-10 max-w-3xl mx-auto px-6">
+      <div className="relative z-10 max-w-3xl mx-auto px-6" style={{ maxWidth: "48rem", marginInline: "auto" }}>
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -96,7 +96,7 @@ export const ProcessSection = () => {
 
                 {/* Header */}
                 <div
-                  className="flex items-center gap-3 px-5 py-3"
+                  className="flex items-center gap-3 px-6 py-4"
                   style={{ borderBottom: "1px solid rgba(127,209,59,0.06)" }}
                 >
                   <span
@@ -125,7 +125,7 @@ export const ProcessSection = () => {
                 </div>
 
                 {/* Body */}
-                <div className="px-5 py-4">
+                <div className="px-6 py-5">
                   <p className="font-bold text-white text-sm mb-1">{step.description}</p>
                   <p className="text-xs leading-relaxed" style={{ color: "var(--text2)" }}>{step.detail}</p>
                 </div>

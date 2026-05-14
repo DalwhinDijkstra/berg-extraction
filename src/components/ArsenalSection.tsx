@@ -77,7 +77,7 @@ export const ArsenalSection = () => {
         style={{ background: "linear-gradient(90deg, transparent, rgba(127,209,59,0.2), transparent)" }}
       />
 
-      <div className="relative z-10 max-w-6xl mx-auto px-6">
+      <div className="relative z-10 max-w-6xl mx-auto px-6" style={{ maxWidth: "72rem", marginInline: "auto" }}>
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -173,7 +173,7 @@ export const ArsenalSection = () => {
               </div>
 
               {/* Content */}
-              <div className="p-4">
+              <div className="p-5">
                 <h3 className="font-black text-white text-base mb-1">{item.name}</h3>
                 <p className="text-xs leading-relaxed mb-3" style={{ color: "var(--text2)" }}>
                   {item.desc}

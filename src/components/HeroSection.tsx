@@ -86,12 +86,27 @@ export const HeroSection = () => {
       </div>
 
       {/* Content */}
-      <div className="relative z-20 text-center px-4 max-w-6xl mx-auto">
+      <div className="relative z-20 text-center px-4 max-w-6xl mx-auto" style={{ maxWidth: "72rem", marginInline: "auto" }}>
+        {/* Logo Badge */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.5, rotate: -10 }}
+          animate={{ opacity: 1, scale: 1, rotate: 0 }}
+          transition={{ duration: 1, ease: "easeOut" }}
+          className="mb-8"
+        >
+          <img
+            src="/logo.svg"
+            alt="B.E.R.G. Badge"
+            className="w-36 h-36 md:w-48 md:h-48 mx-auto drop-shadow-2xl"
+            style={{ filter: "drop-shadow(0 0 30px rgba(200,185,138,0.3))" }}
+          />
+        </motion.div>
+
         {/* Badge */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
           className="inline-flex items-center gap-2 mb-8"
         >
           <span

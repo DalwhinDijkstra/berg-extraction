@@ -58,7 +58,7 @@ export const PainSection = () => {
       </div>
 
       {/* Section title */}
-      <div className="max-w-4xl mx-auto px-6">
+      <div className="max-w-4xl mx-auto px-6" style={{ maxWidth: "56rem", marginInline: "auto" }}>
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -101,7 +101,7 @@ export const PainSection = () => {
                 }}
               />
 
-              <div className="relative z-10 p-6 flex items-start gap-5">
+              <div className="relative z-10 p-7 flex items-start gap-5">
                 <div
                   className="flex-shrink-0 w-12 h-12 rounded-xl flex items-center justify-center"
                   style={{ background: "rgba(127,209,59,0.1)", color: "var(--primary)", border: "1px solid rgba(127,209,59,0.15)" }}
