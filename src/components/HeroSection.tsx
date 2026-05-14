@@ -24,15 +24,15 @@ export const HeroSection = () => {
       <Spotlight className="-top-40 left-0 md:left-60 md:-top-20" fill="#7fd13b" />
 
       {/* Background Beams */}
-      <BackgroundBeams className="opacity-40" />
+      <BackgroundBeams className="opacity-60" />
 
       {/* Gradient orb */}
       <div
         className="absolute pointer-events-none"
         style={{
-          width: "600px",
-          height: "600px",
-          background: "radial-gradient(circle, rgba(127,209,59,0.08) 0%, transparent 70%)",
+          width: "800px",
+          height: "800px",
+          background: "radial-gradient(circle, rgba(127,209,59,0.12) 0%, rgba(127,209,59,0.04) 40%, transparent 70%)",
           top: "50%",
           left: "50%",
           transform: "translate(-50%, -50%)",
@@ -84,7 +84,7 @@ export const HeroSection = () => {
         </motion.p>
 
         {/* Description with text generate */}
-        <div className="mt-6 max-w-2xl mx-auto">
+        <div className="mt-6 max-w-2xl mx-auto min-h-[3rem]">
           <TextGenerateEffect
             words="Spezialisiert auf die Extraktion von Personen, die unfreiwillig in Bayern festsitzen."
             className="text-lg"
@@ -96,8 +96,9 @@ export const HeroSection = () => {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 1.2 }}
-          className="mt-10 flex flex-col sm:flex-row gap-4 justify-center items-center"
+          transition={{ duration: 0.8, delay: 1.4 }}
+          style={{ marginTop: "2.5rem" }}
+          className="flex flex-col sm:flex-row gap-4 justify-center items-center"
         >
           <a
             href="tel:0800-RAUSHIER"
