@@ -15,11 +15,8 @@
   --muted: #aaaaaa;
 }
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+/* Reset entfernt - Tailwind v4 hat eigenen Reset in @layer base.
+   Unlayered * { padding: 0 } wuerde alle Tailwind-Utilities ueberschreiben. */
 
 html {
   scroll-behavior: smooth;
