@@ -124,9 +124,9 @@ export const CTASection = () => {
           >
             {[
               "100% Dialektfreie Zone",
-              "Keine Tracht erforderlich",
-              "Söder-freie Route garantiert",
-              "Vollständige Diskretion",
+              "Keine Lederhosen-Pflicht",
+              "CSU-freie Route garantiert",
+              "Kein Weißwurst-Frühstück",
             ].map((item) => (
               <div
                 key={item}
